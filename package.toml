@@ -1,0 +1,8 @@
+name = "github"
+version = "0.1.0"
+collection = "ServiceProvider"
+platforms = ["Client"]
+
+# List of provisioner names this provider supports
+provisioners = ["terraform"]
+secret_names = ["github_apikey"]

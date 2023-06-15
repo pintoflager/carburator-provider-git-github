@@ -1,0 +1,23 @@
+# Commands to manage git provider
+help = "Commands to manage Github"
+
+[command.project_create]
+help = "Add version control for project with integration to Github"
+
+# Optional, checks from package and node already.
+platform = ["Client"]
+executor = "project/create"
+
+[command.project_create.args.visibility]
+help = "Repository is public"
+long = "public"
+short = "p"
+value_is = "Boolean" # Boolean | String | Array
+to_env_key = "REPOSITORY_PUBLIC"
+
+[command.project_create.args.provisioner]
+help = "Provisioner name to use for managing Github repositories."
+long = "provisioner"
+short = "f"
+value_is = "String" # Boolean | String | Array
+to_env_key = "GITHUB_PROVISIONER"
