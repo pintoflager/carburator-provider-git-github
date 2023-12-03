@@ -8,7 +8,7 @@ if [[ $1 == "server" ]]; then
 fi
 
 # We know we have secrets but this is a good practice anyways.
-if carburator has json git_provider.secrets -p '.exec.json'; then
+if carburator has json git_provider.secrets -p .exec.json; then
 
     # Read secrets from json exec environment line by line
     while read -r secret; do
@@ -23,7 +23,7 @@ if carburator has json git_provider.secrets -p '.exec.json'; then
             --name "$secret" \
             --user root || exit 120
         fi
-    done < <(carburator get json git_provider.secrets array -p '.exec.json')
+    done < <(carburator get json git_provider.secrets array -p .exec.json)
 fi
 
 # Git client is required.

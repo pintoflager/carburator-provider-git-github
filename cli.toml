@@ -3,10 +3,10 @@ help = "Commands to manage Github"
 
 [command.project_create]
 help = "Add version control for project with integration to Github"
-
-# Optional, checks from package and node already.
 platform = ["Client"]
-executor = "project/create"
+
+[command.project_create.executor]
+tail = "project/create"
 
 [command.project_create.args.visibility]
 help = "Repository is public"
