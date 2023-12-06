@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-carburator print terminal info "Invoking Github git provider..."
+carburator log info "Invoking Github git provider..."
 
 # Provisioner defined with a parent command flag
 provisioner="$PROVISIONER_NAME"
@@ -99,4 +99,4 @@ fi
 git remote add origin "$url" &>/dev/null
 git push -u origin main
 
-carburator print terminal success "Github repository for project created."
+carburator log success "Github repository for project created."

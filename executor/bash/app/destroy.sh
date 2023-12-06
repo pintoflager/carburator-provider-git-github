@@ -15,4 +15,4 @@ carburator provisioner request \
 
 # TODO: destroy something on the app dir or the whole crap?
 
-carburator print terminal success "Github git provider environment for app destoryed."
+carburator log success "Github git provider environment for app destoryed."

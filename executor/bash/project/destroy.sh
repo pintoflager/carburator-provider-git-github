@@ -15,5 +15,5 @@ carburator provisioner request \
 
 # TODO: same as with the app destroy.
 
-carburator print terminal success \
+carburator log success \
     "Github git provider environment for project destoryed."

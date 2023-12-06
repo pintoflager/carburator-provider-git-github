@@ -2,7 +2,7 @@
 
 # ATTENTION: Supports only client nodes, pointless to read role from $1
 if [[ $1 == "server" ]]; then
-    carburator print terminal error \
+    carburator log error \
         "Git providers register only on client nodes. Package configuration error."
     exit 120
 fi
@@ -16,7 +16,7 @@ if carburator has json git_provider.secrets -p .exec.json; then
         if ! carburator has secret "$secret" --user root; then
             # ATTENTION: We know only one secret is present. Otherwise
             # prompt texts should be adjusted accordingly.
-            carburator print terminal warn \
+            carburator log warn \
                 "Could not find secret containing Github API token."
             
             carburator prompt secret "Github API key" \
@@ -28,7 +28,7 @@ fi
 
 # Git client is required.
 if ! carburator has program git; then
-  carburator print terminal error "Please install git before proceeding."
+  carburator log error "Please install git before proceeding."
   exit 120
 fi
 
@@ -47,7 +47,7 @@ elif carburator has program dnf; then
     dnf install git
 
 else
-    carburator print terminal error \
+    carburator log error \
         "Unable to detect package manager from client node linux"
     exit 120
 fi
